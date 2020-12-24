@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,12 +36,14 @@
     <!-- Custom styles for this template -->
     <link href="app/views/users/form-validation.css" rel="stylesheet">
 </head>
+
 <body class="bg-light">
 
 <div class="container">
     <main>
         <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="assets/images/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+            <img class="d-block mx-auto mb-4" src="assets/images/brand/bootstrap-logo.svg" alt="" width="72"
+                 height="57">
             <h2>Registration form</h2>
             <p class="lead"></p>
         </div>
@@ -52,8 +55,8 @@
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="first_name" class="form-label">First name</label>
-                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="" value="" required
-                            maxlength="10">
+                            <input type="text" class="form-control" name="first_name" id="first_name" placeholder=""
+                                   value="" required maxlength="10">
                             <div class="invalid-feedback">
                                 Valid first name is required.
                             </div>
@@ -62,7 +65,8 @@
 
                         <div class="col-sm-6">
                             <label for="last_name" class="form-label">Last name</label>
-                            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="" value="" required>
+                            <input type="text" class="form-control" name="last_name" id="last_name" placeholder=""
+                                   value="" required>
                             <div class="invalid-feedback">
                                 Valid last name is required.
                             </div>
@@ -72,7 +76,8 @@
                             <label for="user_name" class="form-label">Username</label>
                             <div class="input-group">
                                 <span class="input-group-text">@</span>
-                                <input type="text" class="form-control" name="user_name" id="user_name" placeholder="user_name" required>
+                                <input type="text" class="form-control" name="user_name" id="user_name"
+                                       placeholder="user_name" required>
                                 <div class="invalid-feedback">
                                     Your username is required.
                                 </div>
@@ -83,7 +88,8 @@
                             <label for="password" class="form-label">Password</label>
                             <div class="input-group">
                                 <span class="input-group-text">@</span>
-                                <input type="password" class="form-control" name="password" id="password" placeholder="password" required>
+                                <input type="password" class="form-control" name="password" id="password"
+                                       placeholder="password" required>
                                 <div class="invalid-feedback">
                                     Your password is required.
                                 </div>
@@ -91,31 +97,35 @@
                         </div>
 
                         <div class="col-12">
-                            <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com">
+                            <label for="email" class="form-label">Email <span class="text-muted"></span></label>
+                            <input type="email" class="form-control" name="email" id="email"
+                                   placeholder="you@example.com">
                             <div class="invalid-feedback">
-                                Please enter a valid email address for shipping updates.
+                                Please enter a valid email address.
                             </div>
                         </div>
 
                         <div class="col-12">
                             <label for="address" class="form-label">Address</label>
-                            <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St">
+                            <input type="text" class="form-control" name="address" id="address"
+                                   placeholder="1234 Main St">
                             <div class="invalid-feedback">
-                                Please enter your shipping address.
+                                Please enter your address.
                             </div>
                         </div>
 
                         <div class="col-12">
-                            <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
-                            <input type="text" class="form-control" name="address2" id="address2" placeholder="Apartment or suite">
+                            <label for="Mobile" class="form-label">Mobile <span class="text-muted"></span></label>
+                            <input type="number" class="form-control" name="mobile" id="mobile"
+                                   placeholder="mobile number">
                         </div>
 
                         <div class="col-md-5">
                             <label for="country" class="form-label">Country</label>
                             <select class="form-select" name="country" id="country">
-                                <option value="">Choose...</option>
-                                <option>United States</option>
+                                <option value="">Choose</option>
+                                <option value="india">india</option>
+                                <option value="japan">japan</option>
                             </select>
                             <div class="invalid-feedback">
                                 Please select a valid country.
@@ -126,7 +136,9 @@
                             <label for="state" class="form-label">State</label>
                             <select class="form-select" name="state" id="state">
                                 <option value="">Choose...</option>
-                                <option>California</option>
+                                <option value="up">up</option>
+                                <option value="mp">mp</option>
+
                             </select>
                             <div class="invalid-feedback">
                                 Please provide a valid state.
@@ -145,35 +157,36 @@
                     <hr class="my-4">
 
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="same_address[]" id="same_address">
-                        <label class="form-check-label" for="same_address">Shipping address is the same as my billing address</label>
+                        <input type="checkbox" class="form-check-input" name="course[]" value="btech" id="course">
+                        <label class="form-check-label" for="same_address">btech
+                        </label>
                     </div>
 
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="same_address[]" id="save-info">
-                        <label class="form-check-label" for="save-info">Save this information for next time</label>
+                        <input type="checkbox" class="form-check-input" name="course[]" value="bca" id="course">
+                        <label class="form-check-label" for="save-info">bca</label>
                     </div>
 
                     <hr class="my-4">
 
-                    <h4 class="mb-3">Payment</h4>
+                    <h4 class="mb-3">gender</h4>
 
                     <div class="my-3">
                         <div class="form-check">
-                            <input id="credit" name="payment_method" type="radio" class="form-check-input" checked>
-                            <label class="form-check-label" for="credit">Credit card</label>
+                            <input id="gender" name="gender" type="radio" value="male" class="form-check-input">
+                            <label class="form-check-label" for="credit">male</label>
                         </div>
                         <div class="form-check">
-                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input">
-                            <label class="form-check-label" for="debit">Debit card</label>
+                            <input id="gender" name="gender" type="radio" value="female" class="form-check-input">
+                            <label class="form-check-label" for="debit">female</label>
                         </div>
-                        <div class="form-check">
+                        <!-- <div class="form-check">
                             <input id="paypal" name="paymentMethod" type="radio" class="form-check-input">
                             <label class="form-check-label" for="paypal">PayPal</label>
-                        </div>
+                        </div> -->
                     </div>
 
-                    <div class="row gy-3">
+                    <!--   <div class="row gy-3">
                         <div class="col-md-6">
                             <label for="cc-name" class="form-label">Name on card</label>
                             <input type="text" class="form-control" name="cc-name" id="cc-name" placeholder="">
@@ -183,34 +196,36 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
+                         <div class="col-md-6">
                             <label for="cc-number" class="form-label">Credit card number</label>
                             <input type="text" class="form-control" name="cc-number" id="cc-number" placeholder="">
                             <div class="invalid-feedback">
                                 Credit card number is required
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                             <label for="cc-expiration" class="form-label">Expiration</label>
-                            <input type="text" class="form-control" name="cc-expiration" id="cc-expiration" placeholder="">
+                            <input type="text" class="form-control" name="cc-expiration" id="cc-expiration"
+                                placeholder="">
                             <div class="invalid-feedback">
                                 Expiration date required
                             </div>
-                        </div>
+                        </div> -->
 
-                        <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                             <label for="cc-cvv" class="form-label">CVV</label>
                             <input type="text" class="form-control" name="cc-cvv" id="cc-cvv" placeholder="">
                             <div class="invalid-feedback">
                                 Security code required
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
                     <hr class="my-4">
 
-                    <button class="w-100 btn btn-primary btn-lg" type="submit" name="submit" value="register">Register</button>
+                    <button class="w-100 btn btn-primary btn-lg" type="submit" name="submit"
+                            value="register">Register</button>
                     <a href="?module=users&action=login">Login</a>
                 </form>
             </div>
@@ -232,4 +247,5 @@
 
 <script src="app/views/users/form-validation.js"></script>
 </body>
+
 </html>

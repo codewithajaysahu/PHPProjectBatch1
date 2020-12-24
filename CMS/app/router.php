@@ -1,8 +1,17 @@
 <?php
 
-$method = @$_SERVER['REQUEST_METHOD'];
-$action = @$_POST['submit']; // through form submit
-$method = strtolower($method);
-$action = strtolower($action);
+$query_string = $_SERVER['QUERY_STRING']; // module=users&action=login
+$module = @$_GET['module'];
+$ctrl = ucfirst(strtolower($module));
+$action = @$_GET['action'];
+$method = strtolower($_SERVER['REQUEST_METHOD']);
+
+if(empty($module) || empty($action)) {
+    include_once("app/views/layouts/header.php");
+    include_once("app/views/layouts/footer.php");
+}else{
+    require_once("app/controllers/$module/$ctrl.php");
+    $action($method, $action);
+}
 
 ?>

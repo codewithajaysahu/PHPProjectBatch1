@@ -38,6 +38,7 @@
 <body class="text-center">
 
 <main class="form-signin">
+    <p style="color: red"><?php if(@$_GET['error']){ echo @$_GET['error']; } ?> </p>
     <form method="post" action="?module=users&action=login">
         <img class="mb-4" src="assets/images/brand/bootstrap-logo.svg" alt="" width="72" height="57">
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
