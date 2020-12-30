@@ -65,7 +65,7 @@
                         <a class="nav-link" href="#">Update</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Edit</a>
+                        <a class="nav-link " href="index.php?module=users&action=profile" tabindex="-1" aria-disabled="true">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="?module=users&action=logout" tabindex="-1" aria-disabled="true">Logout</a>

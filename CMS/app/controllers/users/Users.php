@@ -33,6 +33,44 @@ function register($method, $action){
     }
 }
 
+
+function profile($method, $action){
+    if($method === 'get'){
+        include_once("app/models/Users/Users-Model.php");
+
+        $profile_details = getProfile();
+        //include_once("app/views/layouts/header.php");
+        include_once("app/views/users/profile-view.php");
+       // include_once("app/views/layouts/footer.php");
+        exit();
+    }else if($method ==='post'){
+        include_once("app/models/Users/Users-Model.php");
+        if(setProfile()){
+            header("Location: index.php?module=users&action=profile");
+        }else{
+            $message = " There is something error.";
+            header("Location: index.php?module=users&action=editProfile&error=$message");
+        }
+        // echo "<pre>"; print_r($_REQUEST);die;
+    }
+}
+
+function editProfile($method, $action){
+    if($method === 'get'){
+        include_once("app/models/Users/Users-Model.php");
+
+        $profile_details = getProfile();
+        //include_once("app/views/layouts/header.php");
+        include_once("app/views/users/profile-edit.php");
+        // include_once("app/views/layouts/footer.php");
+        exit();
+    }
+}
+
+function delete() {
+    // delete
+}
+
 function logout() {
     session_destroy();
     header("Location: ?");

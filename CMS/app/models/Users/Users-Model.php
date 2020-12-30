@@ -5,6 +5,7 @@ include_once("app/config/database.php");
 
 function setRegister()
 {
+    $today = date("Y-m-d H:i:s");
     $dbConn = getDBConnection();
     $username = $_POST['user_name'];
     $first_name = $_POST['first_name'];
@@ -22,8 +23,10 @@ function setRegister()
     $gender = $_POST['gender'];
 
 
- $query = " INSERT INTO users (user_name, first_name, last_name, password,email,address,mobile,country,state,zip,course,gender)
- VALUES('$username', '$first_name', '$last_name', '$password','$email ','$address','$mobile','$country','$state','$zip','$course','$gender')";
+ $query = " INSERT INTO users (user_name, first_name, last_name, password,email,address,mobile,country,state,zip,course,gender,
+ created, modified)
+ VALUES('$username', '$first_name', '$last_name', '$password','$email ','$address','$mobile','$country','$state','$zip','$course','$gender'
+ '$today', '$today')";
  mysqli_query($dbConn, $query);
 
 mysqli_close($dbConn);
@@ -51,4 +54,40 @@ function setLogin() {
     return $status;
 }
 
+function getProfile()
+{
+    $result = null;
+    $dbConn = getDBConnection();
+    $id = $_SESSION["id"];
+    $query = " SELECT * FROM users WHERE id = $id";
+    $query = mysqli_query($dbConn, $query);
+    mysqli_close($dbConn);
+    if (mysqli_num_rows($query) > 0) {
+        $result = mysqli_fetch_assoc($query);
+    }
+    return $result;
+
+}
+
+function setProfile()
+{
+    $status = false;
+    $today = date("Y-m-d H:i:s");
+    $dbConn = getDBConnection();
+    $id = $_SESSION["id"];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $address = $_POST['address'];
+    $mobile = $_POST['mobile'];
+
+    $query = "UPDATE users SET first_name = '$first_name', last_name = '$last_name', email = '$email'
+ , address = '$address', mobile = '$mobile', modified = '$today' WHERE id = $id";
+    if(mysqli_query($dbConn, $query)){
+        $status = true;
+    }
+    mysqli_close($dbConn);
+
+    return $status;
+}
 ?>
