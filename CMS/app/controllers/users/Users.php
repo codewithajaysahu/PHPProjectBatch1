@@ -7,7 +7,7 @@ function login($method, $action) {
         include_once("app/views/users/login-view.php");
         exit();
     }else if($method === 'post' && $action === 'login') {
-        include_once("app/models/Users/Users-Model.php");
+        include_once("app/models/users/users-Model.php");
         $login_status = setLogin();
         if($login_status)
             header("Location: ?");
@@ -26,7 +26,7 @@ function register($method, $action){
         include_once("app/views/users/registration-view.php");
         exit();
     }else if($method === 'post' && $action === 'register') {
-        include_once("app/models/Users/Users-Model.php");
+        include_once("app/models/users/users-Model.php");
 
          setRegister();
         echo "<pre>"; print_r($_REQUEST);die;
@@ -36,7 +36,7 @@ function register($method, $action){
 
 function profile($method, $action){
     if($method === 'get'){
-        include_once("app/models/Users/Users-Model.php");
+        include_once("app/models/users/users-Model.php");
 
         $profile_details = getProfile();
         //include_once("app/views/layouts/header-view.php");
@@ -44,7 +44,7 @@ function profile($method, $action){
        // include_once("app/views/layouts/footer-view.php");
         exit();
     }else if($method ==='post'){
-        include_once("app/models/Users/Users-Model.php");
+        include_once("app/models/users/users-Model.php");
         if(setProfile()){
             header("Location: index.php?module=users&action=profile");
         }else{
@@ -57,7 +57,7 @@ function profile($method, $action){
 
 function editProfile($method, $action){
     if($method === 'get'){
-        include_once("app/models/Users/Users-Model.php");
+        include_once("app/models/users/users-Model.php");
 
         $profile_details = getProfile();
         //include_once("app/views/layouts/header-view.php");

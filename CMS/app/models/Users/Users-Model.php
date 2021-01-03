@@ -42,15 +42,22 @@ function setLogin() {
     $password = md5($password);
     $query = " SELECT * FROM users WHERE user_name = '$user_name' AND password = '$password'";
     $query = mysqli_query($dbConn, $query);
-    //mysqli_close($dbConn);
-    if(mysqli_num_rows($query) > 0 ){
-        $result = mysqli_fetch_assoc($query);
-        $user_name = $result['user_name'];
-        $id = $result['id'];
-        $_SESSION['username'] = $user_name;
-        $_SESSION['id'] = $id;
-        $status = true;
+    if($query){
+        if(mysqli_num_rows($query) > 0 ){
+            $result = mysqli_fetch_assoc($query);
+            $user_name = $result['user_name'];
+            $id = $result['id'];
+            $_SESSION['username'] = $user_name;
+            $_SESSION['id'] = $id;
+            $status = true;
+        }
+    }else{
+        $msg = mysqli_error($dbConn);
+        file_put_contents('logs/error.log', $msg, FILE_APPEND);
+        echo mysqli_error($dbConn);die;
     }
+    //mysqli_close($dbConn);
+
     return $status;
 }
 
