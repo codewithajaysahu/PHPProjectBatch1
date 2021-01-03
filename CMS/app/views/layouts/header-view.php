@@ -98,8 +98,8 @@
                     </li>
                 </ul>-->
                 <form class="d-flex">
-                    <a class="nav-link " href="?module=users&action=login" tabindex="-1" aria-disabled="true">Login</a>
-                    <a class="nav-link " href="?module=users&action=register" tabindex="-1" aria-disabled="true">Register</a>
+                    <a class="nav-link " href="index.php?module=users&action=login" tabindex="-1" aria-disabled="true">Login</a>
+                    <a class="nav-link " href="index.php?module=users&action=register" tabindex="-1" aria-disabled="true">Register</a>
                 </form>
             </div>
             <?php } ?>

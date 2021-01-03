@@ -39,9 +39,9 @@ function profile($method, $action){
         include_once("app/models/Users/Users-Model.php");
 
         $profile_details = getProfile();
-        //include_once("app/views/layouts/header.php");
+        //include_once("app/views/layouts/header-view.php");
         include_once("app/views/users/profile-view.php");
-       // include_once("app/views/layouts/footer.php");
+       // include_once("app/views/layouts/footer-view.php");
         exit();
     }else if($method ==='post'){
         include_once("app/models/Users/Users-Model.php");
@@ -60,9 +60,9 @@ function editProfile($method, $action){
         include_once("app/models/Users/Users-Model.php");
 
         $profile_details = getProfile();
-        //include_once("app/views/layouts/header.php");
-        include_once("app/views/users/profile-edit.php");
-        // include_once("app/views/layouts/footer.php");
+        //include_once("app/views/layouts/header-view.php");
+        include_once("app/views/users/profile-edit-view.php");
+        // include_once("app/views/layouts/footer-view.php");
         exit();
     }
 }
