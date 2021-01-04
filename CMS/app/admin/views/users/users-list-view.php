@@ -46,14 +46,31 @@
 
             </tbody>
         </table>
+        <?php if($counter === 0) {?>
+        No records found
+        <?php } ?>
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-end">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                <li <?php if($page >= 2) { ?> class="page-item" <?php } else {?> class="page-item disabled" <?php } ?>>
+                    <a class="page-link"  href="?admin=show&module=users&action=list&page=<?php echo ($page - 1) ?>" tabindex="-1" aria-disabled="true">Previous</a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
+
+                <?php
+                $page_link = null;
+                for($i = 1; $i < $total_pages; $i++){
+
+                    if($i == $page){
+                        $page_link .= "<li class='page-item active'><a class='page-link' href='?admin=show&module=users&action=list&page=$i'>$i</a></li>";
+                    }else {
+                        $page_link .= "<li class='page-item'><a class='page-link' href='?admin=show&module=users&action=list&page=$i'>$i</a></li>";
+                    }
+                }
+                echo $page_link;
+                ?>
+
+                <!--<li class="page-item"><a class="page-link" href="#">1</a></li>
                 <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>-->
                 <li class="page-item">
                     <a class="page-link" href="#">Next</a>
                 </li>
