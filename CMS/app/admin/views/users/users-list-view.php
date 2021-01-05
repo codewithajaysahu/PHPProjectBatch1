@@ -26,6 +26,7 @@
                 <th>Last Name</th>
                 <th>Email</th>
                 <th>Mobile</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
@@ -41,6 +42,7 @@
                 <td><?php echo $row['last_name'];?></td>
                 <td><?php echo $row['email'];?></td>
                 <td><?php echo $row['mobile'];?></td>
+                <td><button onclick="deleteUser(<?php echo $row['id'] ?>)">Delete</button></td>
             </tr>
             <?php } ?>
 
@@ -51,12 +53,14 @@
         <?php } ?>
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-end">
-                <li <?php if($page >= 2) { ?> class="page-item" <?php } else {?> class="page-item disabled" <?php } ?>>
-                    <a class="page-link"  href="?admin=show&module=users&action=list&page=<?php echo ($page - 1) ?>" tabindex="-1" aria-disabled="true">Previous</a>
+                <li <?php if($page > 1) { ?> class="page-item" <?php } else {?> class="page-item disabled" <?php } ?>>
+                    <a class="page-link"  href="?admin=show&module=users&action=list&page=<?php echo ($page - 1) ?>" tabindex="-1"
+                       aria-disabled="true">Previous</a>
                 </li>
 
                 <?php
                 $page_link = null;
+                $page = ($page > 1 ) ? $page : 1;
                 for($i = 1; $i < $total_pages; $i++){
 
                     if($i == $page){
@@ -78,3 +82,9 @@
         </nav>
     </div>
 </main>
+
+<script>
+    function deleteUser(id){
+        alert("okk"+id);
+    }
+</script>
