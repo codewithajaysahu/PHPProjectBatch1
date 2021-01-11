@@ -16,4 +16,10 @@ function getUsersList($method, $action) {
     include_once("app/admin/views/layouts/footer-view.php");
 }
 
+function setDeleteUsers() {
+    include_once("app/admin/models/users/users-Model.php");
+    deleteUser();
+    header("Location: ?admin=show&module=users&action=list");
+}
+
 ?>

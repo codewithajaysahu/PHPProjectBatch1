@@ -9,7 +9,7 @@ function login($method, $action) {
     }else if($method === 'post' && $action === 'login') {
         include_once("app/models/users/users-Model.php");
         $login_status = setLogin();
-        if($login_status)
+        if($login_status) // Login Success
             header("Location: ?");
         else{
             header("Location: ?module=users&action=login&error=Invalid username and password.");

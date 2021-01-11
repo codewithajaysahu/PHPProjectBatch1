@@ -85,6 +85,12 @@
 
 <script>
     function deleteUser(id){
-        alert("okk"+id);
+        // Method1 Call Ajax
+        // Method2 Call Href
+        if(confirm("Do you want to delete this user.")){
+            window.location.href = "?admin=show&module=users&action=delete&record="+id;
+        }else{
+            alert("I am not intrested to delete this user.");
+        }
     }
 </script>
