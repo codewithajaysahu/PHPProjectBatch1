@@ -13,13 +13,15 @@ if($admin === 'show') { // Backend
     if($method === 'get'){
         if($action === 'Delete'){
             $action = 'set'.$action.$ctrl;
+        }else if($action === 'Edit'){
+            $action = 'set'.$action.$ctrl;
         }else{
             $action = $method.$ctrl.$action;
         }
     }else{
         $action = 'set'.$ctrl.$action;
     }
-    $action($method, $action);
+    $action($method, $action); // call method
 } else { // Frontend
     if(empty($module) || empty($action)) { // Is module value is blank or action value is blank of query string
         include_once("app/views/layouts/header-view.php");

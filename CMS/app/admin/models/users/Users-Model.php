@@ -54,4 +54,23 @@ function deleteUser() {
     return $status;
 }
 
+function getUserDetails() {
+    $id = $_GET['record'];
+    $result = false;
+    $dbConn = getDBConnection();
+    $query = " SELECT * FROM users WHERE deleted = 0 AND id = $id LIMIT 1";
+    $res_query = mysqli_query($dbConn, $query);
+    if($res_query){
+        if(mysqli_num_rows($res_query) > 0){
+            $result = mysqli_fetch_assoc($res_query);
+        }
+    }else{
+        $msg = mysqli_error($dbConn);
+        file_put_contents('logs/error.log', $msg, FILE_APPEND | LOCK_EX );
+        echo mysqli_error($dbConn);die;
+    }
+    mysqli_close($dbConn);
+    return $result;
+}
+
 ?>

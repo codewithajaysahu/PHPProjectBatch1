@@ -42,6 +42,8 @@
                 <td><?php echo $row['last_name'];?></td>
                 <td><?php echo $row['email'];?></td>
                 <td><?php echo $row['mobile'];?></td>
+                <td><a href="?admin=show&module=users&action=view&record=<?php echo $row['id'];?>">View</td>
+                <td><a href="?admin=show&module=users&action=edit&record=<?php echo $row['id'];?>">Edit</td>
                 <td><button onclick="deleteUser(<?php echo $row['id'] ?>)">Delete</button></td>
             </tr>
             <?php } ?>
