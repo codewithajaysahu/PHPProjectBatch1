@@ -73,4 +73,26 @@ function getUserDetails() {
     return $result;
 }
 
+function setUserDetails()
+{
+    $status = false;
+    $today = date("Y-m-d H:i:s");
+    $dbConn = getDBConnection();
+    $id = $_POST["record"];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $address = $_POST['address'];
+    $mobile = $_POST['mobile'];
+
+    $query = "UPDATE users SET first_name = '$first_name', last_name = '$last_name', email = '$email'
+ , address = '$address', mobile = '$mobile', modified = '$today' WHERE id = $id";
+    if(mysqli_query($dbConn, $query)){
+        $status = true;
+    }
+    mysqli_close($dbConn);
+
+    return $status;
+}
+
 ?>

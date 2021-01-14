@@ -40,7 +40,7 @@ function setLogin() {
     $user_name = $_POST['user_name'];
     $password = $_POST['password'];
     $password = md5($password);
-    $query = " SELECT * FROM users WHERE user_name = '$user_name' AND password = '$password'";
+    $query = " SELECT * FROM users WHERE status = 'Active' and deleted = 0 AND user_name = '$user_name' AND password = '$password'";
     $query = mysqli_query($dbConn, $query);
     if($query){
         if(mysqli_num_rows($query) > 0 ){

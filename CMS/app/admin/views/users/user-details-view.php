@@ -22,23 +22,52 @@
             <tr>
                 <th>Username</th>
                 <td><?php echo $user_details['user_name'];?></td>
-                <th>First Name</th>
-                <td><td><?php echo $user_details['first_name'];?></td>
+                <th>Status</th>
+                <td><?php echo $user_details['status'];?></td>
             </tr>
 
             <tr>
+                <th>Is Admin</th>
+                <td><?php echo $user_details['is_admin'];?></td>
+                <th>Gender</th>
+                <td><?php echo ucfirst($user_details['gender']);?></td>
+            </tr>
+
+            <tr>
+                <th>First Name</th>
+                <td><?php echo $user_details['first_name'];?></td>
                 <th>Last Name</th>
                 <td><?php echo $user_details['last_name'];?></td>
-                <th>Mobile</th>
-                <td><td><?php echo $user_details['mobile'];?></td>
             </tr>
 
             <tr>
+                <th>Mobile</th>
+                <td><?php echo $user_details['mobile'];?></td>
                 <th>Email</th>
                 <td><?php echo $user_details['email'];?></td>
-                <th>Gender</th>
-                <td><td><?php echo ucfirst($user_details['gender']);?></td>
             </tr>
+
+            <tr>
+                <th>Address</th>
+                <td><?php echo $user_details['address'];?></td>
+                <th>Pincode</th>
+                <td><?php echo $user_details['zip'];?></td>
+            </tr>
+
+            <tr>
+                <th>State</th>
+                <td><?php echo ucfirst($user_details['state']);?></td>
+                <th>Country</th>
+                <td><?php echo $user_details['country'];?></td>
+            </tr>
+
+            <tr>
+                <th>Created</th>
+                <td><?php echo $user_details['created'];?></td>
+                <th>Modified</th>
+                <td><?php echo $user_details['modified'];?></td>
+            </tr>
+
             </thead>
 
         </table>

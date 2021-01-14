@@ -46,4 +46,11 @@ function setEditUsers() {
     die("View User Data");
 }
 
+// Update single record
+function setUsersUpdate() {
+    include_once("app/admin/models/users/users-Model.php");
+    $user_details = setUserDetails();
+    die("View User Data");
+}
+
 ?>
