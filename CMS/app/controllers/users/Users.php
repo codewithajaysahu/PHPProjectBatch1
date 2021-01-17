@@ -44,6 +44,8 @@ function profile($method, $action){
        // include_once("app/views/layouts/footer-view.php");
         exit();
     }else if($method ==='post'){
+        fileUpload();
+        die("done");
         include_once("app/models/users/users-Model.php");
         if(setProfile()){
             header("Location: index.php?module=users&action=profile");
@@ -74,6 +76,15 @@ function delete() {
 function logout() {
     session_destroy();
     header("Location: ?");
+}
+
+function fileUpload() {
+    $upload_dir = "upload/abc.png";
+    $filename = $_FILES['profile_photo']['tmp_name'];
+    //$uploadfile = $upload_dir . basename($_FILES['profile_photo']['name']);
+   // echo $uploadfile.'<br>';
+    echo $filename;
+    move_uploaded_file($filename, $upload_dir);
 }
 
 

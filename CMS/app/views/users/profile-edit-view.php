@@ -51,7 +51,7 @@
         <div class="row g-3">
             <div class="col-md-7 col-lg-8">
                 <h4 class="mb-3">Student Details</h4>
-                <form class="needs-validation" novalidate action="?module=users&action=profile" method="post">
+                <form class="needs-validation" novalidate action="?module=users&action=profile" method="post" enctype="multipart/form-data">
                     <div class="col-12">
                         <label for="user_name" class="form-label">Username</label>
                         <div class="input-group">
@@ -102,6 +102,11 @@
                                    placeholder="mobile number" value="<?php echo $profile_details['mobile']; ?>">
                         </div>
 
+                        <div class="col-12">
+                            <label for="profile_photo" class="form-label">Profile Photo</label>
+                            <input type="file" class="form-control" name="profile_photo" id="profile_photo" placeholder="Profile Photo">
+                        </div>
+
                         <div class="col-md-5">
                             <label for="country" class="form-label">Country</label>
                             <select class="form-select" name="country" id="country">
@@ -148,6 +153,7 @@
                         <input type="checkbox" class="form-check-input" name="course[]" value="bca" id="course">
                         <label class="form-check-label" for="save-info">bca</label>
                     </div>
+
 
                     <hr class="my-4">
 
