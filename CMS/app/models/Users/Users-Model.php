@@ -40,6 +40,8 @@ function setLogin() {
     $user_name = $_POST['user_name'];
     $password = $_POST['password'];
     $password = md5($password);
+    $remember_me = $_POST['remember_me'];
+    $remember_me = (int) $remember_me;
     $query = " SELECT * FROM users WHERE status = 'Active' and deleted = 0 AND user_name = '$user_name' AND password = '$password'";
     $query = mysqli_query($dbConn, $query);
     if($query){
@@ -50,6 +52,8 @@ function setLogin() {
             $_SESSION['username'] = $user_name;
             $_SESSION['id'] = $id;
             $status = true;
+            if($remember_me === 1)
+                setcookie (session_name(), session_id() ,time()+ ( 60 * 60 * 24 * 7), "/");
         }
     }else{
         $msg = mysqli_error($dbConn);

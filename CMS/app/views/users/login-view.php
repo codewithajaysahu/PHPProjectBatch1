@@ -48,7 +48,7 @@
         <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
         <div class="checkbox mb-3">
             <label>
-                <input type="checkbox" value="remember-me"> Remember me
+                <input type="checkbox" value="" name="remember_me" id="remember_me" onclick="setRememberMe(this);"> Remember me
             </label>
         </div>
         <a href="?module=users&action=register">Register</a>
@@ -57,5 +57,13 @@
     </form>
 </main>
 
+<script>
+    function setRememberMe(val) {
+        if(val.checked)
+           document.getElementById("remember_me").value = 1;
+        else
+            document.getElementById("remember_me").value = 0;
+    }
+</script>
 </body>
 </html>
