@@ -3,9 +3,19 @@
 include_once("app/config/database.php");
 
 function getUsers($start_limit, $end_limit) {
-    $result = false; // login error
+    $search_query = null; // login error
     $dbConn = getDBConnection();
-    $query = " SELECT * FROM users WHERE deleted = 0 LIMIT $start_limit, $end_limit";
+    if(@$_GET['search']) {
+        $search = $_GET['search'];
+        $search_query = " AND (user_name LIKE '$search%' OR first_name LIKE '%$search%' OR mobile LIKE '%$search%' OR email LIKE '%$search%') ";
+    }
+
+    $limit_query = "LIMIT $start_limit, $end_limit";
+    $query = " SELECT * FROM users WHERE deleted = 0 ";
+    if($search_query)
+        $query .= $search_query;
+    $query .= $limit_query;
+
     $res_query = mysqli_query($dbConn, $query);
     if($res_query){
             $result = $res_query;
@@ -20,8 +30,15 @@ function getUsers($start_limit, $end_limit) {
 }
 
 function getUsersCount() {
+    $search_query = null;
     $dbConn = getDBConnection();
+    if(@$_GET['search']) {
+        $search = $_GET['search'];
+        $search_query = " AND (user_name LIKE '$search%' OR first_name LIKE '%$search%' OR mobile LIKE '%$search%' OR email LIKE '%$search%') ";
+    }
     $query = " SELECT COUNT(1) total_rows FROM users WHERE deleted = 0";
+    if($search_query)
+        $query .= $search_query;
     $res_query = mysqli_query($dbConn, $query);
     if($res_query){
         $result = mysqli_fetch_row($res_query);

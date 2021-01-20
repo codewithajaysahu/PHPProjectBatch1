@@ -58,8 +58,8 @@
 </main>
 
 <script>
-    function setRememberMe(val) {
-        if(val.checked)
+    function setRememberMe(obj) {
+        if(obj.checked)
            document.getElementById("remember_me").value = 1;
         else
             document.getElementById("remember_me").value = 0;
