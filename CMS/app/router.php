@@ -24,8 +24,7 @@ if($admin === 'show') { // Backend
     $action($method, $action); // call method
 } else { // Frontend
     if(empty($module) || empty($action)) { // Is module value is blank or action value is blank of query string
-        include_once("app/views/layouts/header-view.php");
-        include_once("app/views/layouts/footer-view.php");
+        include_once("app/views/layouts/default-view.php");
     }else{
         require_once("app/controllers/$module/$ctrl.php"); // Dynamic Approach
         $action($method, $action); // dynamic

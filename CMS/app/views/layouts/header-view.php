@@ -1,111 +1,105 @@
-<!doctype html>
-<html lang="en" class="h-100">
+<!Doctype html>
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
-    </script>
-    <meta name="generator" content="Hugo 0.79.0">
+    <title>Index Page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
+    <link rel="stylesheet" href="assets/frontend/bootstrap/bootstrap.css" />
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sticky-footer-navbar/">
+    <script src="assets/frontend/bootstrap/bootstrap.bundle.min.js"></script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css">
 
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-
-    <!-- Custom styles for this template -->
-    <link href="assets/css/sticky-footer-navbar.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/frontend/css/index.css" />
 </head>
 
-<body class="d-flex flex-column h-100">
+<body>
+<section>
 
-<header>
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-            <?php if(isLoggedIn()) { ?>
-            <a class="navbar-brand" href="#">iCMS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Update</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="index.php?module=users&action=profile" tabindex="-1" aria-disabled="true">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="index.php?admin=show&module=dashboard&action=index" tabindex="-1" aria-disabled="true">Admin Panel</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="?module=users&action=logout" tabindex="-1" aria-disabled="true">Logout</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+    <!---------------------------------------- Navigation Starts ---------------------------------->
+    <div class="fixed-top">
+        <header class="topbar">
+            <div class="container">
+                <div class="row">
+                    <!-- social icon-->
+                    <div class="col-sm-12">
+                        <ul class="social-network">
+                            <li><a class="waves-effect waves-dark" href="https://www.facebook.com/"><i
+                                        class="fa fa-facebook"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="https://twitter.com/explore"><i
+                                        class="fa fa-twitter"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="https://www.linkedin.com/login"><i
+                                        class="fa fa-linkedin"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="https://www.printset.net/"><i
+                                        class="fa fa-pinterest"></i></a></li>
+                            <li><a class="waves-effect waves-dark" href="https://www.gmail.com"><i
+                                        class="fa fa-google-plus"></i></a></li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
-            <?php } else{ ?>
-            <a class="navbar-brand" href="#">CMS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-               <!-- <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Update</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Delete</a>
-                    </li>
-                </ul>-->
-                <form class="d-flex">
-                    <a class="nav-link " href="index.php?module=users&action=login" tabindex="-1" aria-disabled="true">Login</a>
-                    <a class="nav-link " href="index.php?module=users&action=register" tabindex="-1" aria-disabled="true">Register</a>
-                </form>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark mx-background-top-linear">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" style="text-transform: uppercase;"> FREE COLLEGE</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="studentcorner.html">Student Corner</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="department.html">Department</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="place.html">Placement</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="registration.html">Registration</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <?php } ?>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </div>
+</section>
+<!------------------------------- Navigation ends ------------------------------ -->

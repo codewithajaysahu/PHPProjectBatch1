@@ -13,7 +13,7 @@
 
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/backend/css/bootstrap.css" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -33,7 +33,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/dashboard.css" rel="stylesheet">
+    <link href="assets/backend/css/dashboard.css" rel="stylesheet">
 </head>
 <body>
 
