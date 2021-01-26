@@ -15,7 +15,7 @@
                 <div class="staff">
                     <div class="img-wrap d-flex align-items-stretch">
                         <div class="img">
-                            <img src="img/teacher-4.jpg" style="height:350px; width: 350px;">
+                            <img src="assets/frontend/img/teacher-4.jpg" style="height:350px; width: 350px;">
                         </div>
                     </div>
                     <div class="text pt-3 text-center">
@@ -32,7 +32,7 @@
                 <div class="staff">
                     <div class="img-wrap d-flex align-items-stretch">
                         <div class="img">
-                            <img src="img/teacher-1.jpg" style="height:350px; width: 350px;">
+                            <img src="assets/frontend/img/teacher-1.jpg" style="height:350px; width: 350px;">
                         </div>
                     </div>
                     <div class="text pt-3 text-center">
@@ -48,7 +48,7 @@
                 <div class="staff">
                     <div class="img-wrap d-flex align-items-stretch">
                         <div class="img">
-                            <img src="img/teacher-2.jpg" style="height:350px; width: 350px;">
+                            <img src="assets/frontend/img/teacher-2.jpg" style="height:350px; width: 350px;">
                         </div>
                     </div>
                     <div class="text pt-3 text-center">
@@ -65,7 +65,7 @@
                 <div class="staff">
                     <div class="img-wrap d-flex align-items-stretch">
                         <div class="img">
-                            <img src="img/teacher-3.jpg" style="height:350px; width: 350px;">
+                            <img src="assets/frontend/img/teacher-3.jpg" style="height:350px; width: 350px;">
                         </div>
                     </div>
                     <div class="text pt-3 text-center">

@@ -4,7 +4,9 @@
 // include_once("app/config/database.php");
 function login($method, $action) {
     if($method === 'get' && ($action === 'login' || $action === '')) {
+        include_once("app/views/layouts/header-view.php");
         include_once("app/views/users/login-view.php");
+        include_once("app/views/layouts/footer-view.php");
         exit();
     }else if($method === 'post' && $action === 'login') {
         include_once("app/models/users/users-Model.php");

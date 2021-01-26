@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Index Page</title>
+    <title><?php if(@$title)  { echo $title;?> <?php } else {?>Home Page Page<?php }?></title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -20,7 +20,14 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
-    <link rel="stylesheet" href="assets/frontend/css/index.css" />
+
+    <?php if(@$_GET['module'] == 'users' && @$_GET['action'] == 'login') { ?>
+        <link rel="stylesheet" href="assets/frontend/css/login.css" />
+    <?php } elseif(@$_GET['module'] == 'aboutus' && @$_GET['action'] == 'details') {?>
+        <link rel="stylesheet" href="assets/frontend/css/about.css" />
+    <?php } else {?>
+     <link rel="stylesheet" href="assets/frontend/css/index.css" />
+    <?php } ?>
 </head>
 
 <body>
@@ -62,11 +69,11 @@
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home </a>
+                            <a class="nav-link" href="?">Home </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
+                            <a class="nav-link" href="index.php?module=aboutus&action=details">About</a>
                         </li>
 
                         <li class="nav-item">
@@ -84,14 +91,23 @@
                         <li class="nav-item">
                             <a class="nav-link" href="gallery.html">Gallery</a>
                         </li>
+                    <?php if(isLoggedIn()) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?module=users&action=logout">Logout</a>
+                        </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login</a>
+                            <a class="nav-link" href="index.php?admin=show&module=dashboard&action=index">Admin Panel</a>
+                        </li>
+                    <?php } else { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php?module=users&action=login">Login</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="registration.html">Registration</a>
                         </li>
+                    <?php } ?>
 
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>

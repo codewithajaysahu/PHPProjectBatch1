@@ -1,6 +1,6 @@
 <!---------------------------------Request quote starts--------------------------->
 
-<section class="ftco-section ftco-consult   pt-5" style="background-image: url(img/bg_5.jpg);  "
+<section class="ftco-section ftco-consult   pt-5" style="background-image: url(assets/frontend/img/bg_5.jpg);  "
          data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">

@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-3 course ftco-animate">
                 <div class="img">
-                    <img src="img/course-1.jpg" style="height:350px; width: 350px;">
+                    <img src="assets/frontend/img/course-1.jpg" style="height:350px; width: 350px;">
                 </div>
                 <div class="text pt-4">
                     <p class="meta d-flex">
@@ -28,7 +28,7 @@
             </div>
             <div class="col-md-3 course ftco-animate">
                 <div class="img">
-                    <img src="img/course-2.jpg" style="height:350px; width: 350px;">
+                    <img src="assets/frontend/img/course-2.jpg" style="height:350px; width: 350px;">
                 </div>
                 <div class="text pt-4">
                     <p class="meta d-flex">
@@ -44,7 +44,7 @@
             </div>
             <div class="col-md-3 course ftco-animate">
                 <div class="img">
-                    <img src="img/course-3.jpg" style="height:350px; width: 350px;">
+                    <img src="assets/frontend/img/course-3.jpg" style="height:350px; width: 350px;">
                 </div>
                 <div class="text pt-4">
                     <p class="meta d-flex">
@@ -60,7 +60,7 @@
             </div>
             <div class="col-md-3 course ftco-animate">
                 <div class="img">
-                    <img src="img/course-4.jpg" style="height:350px; width: 350px;">
+                    <img src="assets/frontend/img/course-4.jpg" style="height:350px; width: 350px;">
                 </div>
                 <div class="text pt-4">
                     <p class="meta d-flex">

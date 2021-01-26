@@ -4,7 +4,7 @@
         <div class="row d-flex">
             <div class="col-md-5 order-md-last wrap-about wrap-about d-flex align-items-stretch">
                 <div class="img">
-                    <img class="animate__animated animate__backInDown" src="img/course-8.jpg">
+                    <img class="animate__animated animate__backInDown" src="assets/frontend/img/course-8.jpg">
                 </div>
             </div>
             <div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
