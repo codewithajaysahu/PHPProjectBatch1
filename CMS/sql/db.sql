@@ -13,6 +13,24 @@ MySQL - 5.5.5-10.4.16-MariaDB : Database - phpcms
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+/*Table structure for table `aboutus` */
+
+DROP TABLE IF EXISTS `aboutus`;
+
+CREATE TABLE `aboutus` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `content` text DEFAULT NULL,
+  `status` enum('open','hold','publish') DEFAULT 'open',
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `modified_by` int(11) DEFAULT NULL,
+  `deleted` tinyint(1) DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `aboutus` */
 
 /*Table structure for table `courses` */
 
