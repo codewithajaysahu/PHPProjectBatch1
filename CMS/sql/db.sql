@@ -20,17 +20,22 @@ DROP TABLE IF EXISTS `aboutus`;
 CREATE TABLE `aboutus` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
+  `title` varchar(100) DEFAULT NULL,
   `content` text DEFAULT NULL,
   `status` enum('open','hold','publish') DEFAULT 'open',
+  `sequence` int(4) DEFAULT 0,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `modified_by` int(11) DEFAULT NULL,
   `deleted` tinyint(1) DEFAULT 0,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_aboutus_name_unique` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `aboutus` */
+
+insert  into `aboutus`(`id`,`name`,`title`,`content`,`status`,`sequence`,`created`,`modified`,`created_by`,`modified_by`,`deleted`) values (1,'about','About','CollegeSpace is a socio-economic portal available to all students and alumni of NSIT. The CS initiative was launched on 4th July, 2011 with the motive of making accessible each and every single piece of information pertaining to NSIT on an online platform. Our ultimate aim lies in creating an online database on which each student can rely upon; and we strive to achieve this every single day. Providing unparalleled assistance to students in every branch continues to be our one biggest objective.','publish',1,'2021-02-01 20:27:15','2021-02-01 20:27:17',1,1,0),(2,'who-founded-it','Who founded it?','Sahil Gulati, immensely talented and known for his marketing & managerial skills, is a passionate web developer. Tushar Gupta is an avid technology fan; Instrumentation may have been his branch, but computer runs in his blood. What all information does it provide? Events & updates – Providing up to date information on events & latest happenings Societies – Descriptions, links to pages, contact details and latest news Academics – Useful academic data including syllabus, timetables, recommended books, study notes, results & exam papers Festivals – Details regarding each festival, including photos of past fests Admission – An updated source for all prospective students Miscellaneous – Entertainment sources including games & literature FAQ – Frequently asked questions about NSIT','publish',2,NULL,NULL,NULL,NULL,0),(3,'our-departments','Our Departments','Technical – The backbone of CS. Responsible for maintaining the site and keeping it technically up to date. Comprised of hardworking web development enthusiasts. Content Writing – Information gets its true worth only after it’s beautifully written. That’s their motto and they work to keep true to these words. Responsible for articles regarding societies, festivals, recent events & much more. Designing – They do everything from collecting notes & papers to visiting the admin in the break of dawn to get the results for each semester. All this, just for you. Probably the most hardworking department, they sweat day & night to keep you updated. Marketing – Apple wouldn’t have succeeded without the marketing genius of Steve Jobs behind them, would they? This department is responsible for publicizing CollegeSpace and its different groups & content. It even collaborates with different societies in college for various activities.','publish',3,NULL,NULL,NULL,NULL,0),(4,'working-ethics','Working Ethics','We started with a team of three and after three successful years, we’ve expanded into a network of around 60 hard-working and determined team members, all sharing a common passion to keep you updated. With the freedom given to each team member to enable them to explore innovative ideas, a hierarchy system ensures a sense of discipline amongst the members. We’re not always working – we love to party too! Celebrating and reveling in each CS accomplishment is an important aspect of our work. Regardless of the department you’re in, we bring out the best in you. Be it web development, writing, marketing or managing – we encourage each other to explore our fields of interest with zeal.','publish',4,NULL,NULL,NULL,NULL,0);
 
 /*Table structure for table `courses` */
 
