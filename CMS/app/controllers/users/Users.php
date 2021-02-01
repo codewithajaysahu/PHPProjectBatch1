@@ -4,6 +4,7 @@
 // include_once("app/config/database.php");
 function login($method, $action) {
     if($method === 'get' && ($action === 'login' || $action === '')) {
+        $title = "login";
         include_once("app/views/layouts/header-view.php");
         include_once("app/views/users/login-view.php");
         include_once("app/views/layouts/footer-view.php");
@@ -25,7 +26,10 @@ function register($method, $action){
     if($method === 'get' && $action === 'register') {
         $token = (rand(10,10000000000));
         $_SESSION['token'] = $token;
+        $title = "Regsiter";
+        include_once("app/views/layouts/header-view.php");
         include_once("app/views/users/registration-view.php");
+        include_once("app/views/layouts/footer-view.php");
         exit();
     }else if($method === 'post' && $action === 'register') {
         include_once("app/models/users/users-Model.php");
