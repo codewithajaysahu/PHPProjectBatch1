@@ -22,100 +22,31 @@
                     <h2>Free College Stablished Since 1960</h2>
                     <br>
                     <div id="accordion">
+<?php while($content = mysqli_fetch_assoc($contents)) {
+
+ ?>
                         <div class="card">
-                            <div class="card-header" id="headingOne">
+                            <div class="card-header" id="heading<?php echo $content['id']; ?>">
                                 <h5 class="mb-0">
-                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                                            aria-controls="collapseOne">
-                                        About
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<?php echo $content['id']; ?>" aria-expanded="false"
+                                            aria-controls="collapse<?php echo $content['id']; ?>">
+                                        <?php echo $content['title']; ?>
                                     </button>
                                 </h5>
                             </div>
 
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div id="collapse<?php echo $content['id']; ?>" class="collapse" aria-labelledby="heading<?php echo $content['id']; ?>" data-parent="#accordion">
                                 <div class="card-body">
-                                    <?php echo $contents;?>
+                                    <?php echo $content['content']; ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
-                                            aria-expanded="false" aria-controls="collapseTwo">
-                                        Who founded it?
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                <div class="card-body">
-                                    Sahil Gulati, immensely talented and known for his marketing & managerial skills, is a passionate
-                                    web developer. Tushar Gupta is an avid technology fan; Instrumentation may have been his branch, but
-                                    computer runs in his blood.
+                        <?php } ?>
 
-                                    What all information does it provide?
 
-                                    Events & updates – Providing up to date information on events & latest happenings
-                                    Societies – Descriptions, links to pages, contact details and latest news
-                                    Academics – Useful academic data including syllabus, timetables, recommended books, study notes,
-                                    results & exam papers
-                                    Festivals – Details regarding each festival, including photos of past fests
-                                    Admission – An updated source for all prospective students
-                                    Miscellaneous – Entertainment sources including games & literature
-                                    FAQ – Frequently asked questions about NSIT
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
-                                            aria-expanded="false" aria-controls="collapseTwo">
-                                        Our Departments
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                <div class="card-body">
-                                    Technical – The backbone of CS. Responsible for maintaining the site and keeping it technically up
-                                    to date. Comprised of hardworking web development enthusiasts.
-                                    Content Writing – Information gets its true worth only after it’s beautifully written. That’s their
-                                    motto and they work to keep true to these words. Responsible for articles regarding societies,
-                                    festivals, recent events & much more.
-                                    Designing – They do everything from collecting notes & papers to visiting the admin in the break of
-                                    dawn to get the results for each semester. All this, just for you. Probably the most hardworking
-                                    department, they sweat day & night to keep you updated.
-                                    Marketing – Apple wouldn’t have succeeded without the marketing genius of Steve Jobs behind them,
-                                    would they? This department is responsible for publicizing CollegeSpace and its different groups &
-                                    content. It even collaborates with different societies in college for various activities.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed text-center" data-toggle="collapse"
-                                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Working ethics
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                <div class="card-body">
-                                    We started with a team of three and after three successful years, we’ve expanded into a network of
-                                    around 60 hard-working and determined team members, all sharing a common passion to keep you
-                                    updated.
-                                    With the freedom given to each team member to enable them to explore innovative ideas, a hierarchy
-                                    system ensures a sense of discipline amongst the members.
-                                    We’re not always working – we love to party too! Celebrating and reveling in each CS accomplishment
-                                    is an important aspect of our work.
-                                    Regardless of the department you’re in, we bring out the best in you. Be it web development,
-                                    writing, marketing or managing – we encourage each other to explore our fields of interest with
-                                    zeal.
-                                </div>
 
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
             </div>
