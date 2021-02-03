@@ -35,7 +35,7 @@
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="password" required>
                 <div class="btn">
-                    <button type="submit"><a href="login.html">Login</a></button>
+                    <button type="submit">Login</button>
                 </div>
                 <label>
                     <input type="checkbox" checked="checked" name="remember_me" id="remember_me" onclick="setRememberMe(this);> Remember me
