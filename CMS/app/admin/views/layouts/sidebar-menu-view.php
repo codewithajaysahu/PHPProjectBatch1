@@ -20,6 +20,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="index.php?admin=show&module=gallery&action=list">
+                    <span data-feather="users"></span>
+                    Gallery
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="index.php?admin=show&module=users&action=list">
                     <span data-feather="users"></span>
                     Users

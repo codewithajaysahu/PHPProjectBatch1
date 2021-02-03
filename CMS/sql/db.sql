@@ -12,6 +12,7 @@ MySQL - 5.5.5-10.4.16-MariaDB : Database - phpcms
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+USE `phpcms`;
 
 /*Table structure for table `aboutus` */
 
@@ -84,7 +85,28 @@ CREATE TABLE `documents` (
 
 /*Data for the table `documents` */
 
-insert  into `documents`(`id`,`module_id`,`record_id`,`name`,`original_name`,`size`,`size_type`,`extension`,`file_path`,`created`,`modified`,`created_by`,`modified_by`,`deleted`) values (1,1,1,'12321_abc.png','abc.png',1000,'KB','png','upload','2021-01-17 15:40:36','2021-01-17 15:40:39',1,1,0);
+insert  into `documents`(`id`,`module_id`,`record_id`,`name`,`original_name`,`size`,`size_type`,`extension`,`file_path`,`created`,`modified`,`created_by`,`modified_by`,`deleted`) values (1,6,1,'12321_abc.png','abc.png',1000,'KB','png','upload','2021-01-17 15:40:36','2021-01-17 15:40:39',1,1,0);
+
+/*Table structure for table `gallery` */
+
+DROP TABLE IF EXISTS `gallery`;
+
+CREATE TABLE `gallery` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `module_id` int(10) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `type` enum('banner','slide_show','default') DEFAULT 'default',
+  `description` text DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `modified_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `gallery` */
+
+insert  into `gallery`(`id`,`module_id`,`name`,`type`,`description`,`created`,`modified`,`created_by`,`modified_by`) values (2,6,'Test','default',NULL,'2021-02-03 20:55:35','2021-02-03 20:54:24',NULL,NULL);
 
 /*Table structure for table `modules` */
 
@@ -105,7 +127,7 @@ CREATE TABLE `modules` (
 
 /*Data for the table `modules` */
 
-insert  into `modules`(`id`,`name`,`is_public`,`created`,`modified`,`created_by`,`modified_by`,`deleted`) values (1,'Users','No','2021-01-17 15:36:50','2021-01-17 15:36:52',1,1,0),(2,'Documents','No','2021-01-17 15:43:51','2021-01-17 15:43:54',1,1,0),(3,'Courses','No','2021-01-17 15:44:09','2021-01-17 15:44:12',1,1,0),(4,'Home','Yes','2021-01-17 15:44:59','2021-01-17 15:45:02',1,1,0),(5,'ContactUs','Yes','2021-01-17 15:45:19','2021-01-17 15:45:22',1,1,0),(6,'Gallery','No','2021-01-17 15:47:12','2021-01-17 15:47:15',1,1,0),(7,'Blog','No','2021-01-17 15:47:30','2021-01-17 15:47:33',1,1,0),(8,'Placement','No',NULL,NULL,NULL,NULL,0),(9,'AboutUs','No',NULL,NULL,NULL,NULL,0),(10,'Attendance','No',NULL,NULL,NULL,NULL,0),(11,'Events','No',NULL,NULL,NULL,NULL,0),(12,'TimeTable','No',NULL,NULL,NULL,NULL,0);
+insert  into `modules`(`id`,`name`,`is_public`,`created`,`modified`,`created_by`,`modified_by`,`deleted`) values (1,'Users','No','2021-01-17 15:36:50','2021-01-17 15:36:52',1,1,0),(2,'Documents','No','2021-01-17 15:43:51','2021-01-17 15:43:54',1,1,0),(3,'Courses','No','2021-01-17 15:44:09','2021-01-17 15:44:12',1,1,0),(4,'Home','Yes','2021-01-17 15:44:59','2021-01-17 15:45:02',1,1,0),(5,'ContactUs','Yes','2021-01-17 15:45:19','2021-01-17 15:45:22',1,1,0),(6,'Gallery','Yes','2021-01-17 15:47:12','2021-01-17 15:47:15',1,1,0),(7,'Blog','No','2021-01-17 15:47:30','2021-01-17 15:47:33',1,1,0),(8,'Placement','No',NULL,NULL,NULL,NULL,0),(9,'AboutUs','No',NULL,NULL,NULL,NULL,0),(10,'Attendance','No',NULL,NULL,NULL,NULL,0),(11,'Events','No',NULL,NULL,NULL,NULL,0),(12,'TimeTable','No',NULL,NULL,NULL,NULL,0);
 
 /*Table structure for table `users` */
 
